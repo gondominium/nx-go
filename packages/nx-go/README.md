@@ -1,3 +1,3 @@
-# @nx-go/nx-go
+# @gondominium/nx-go
 
-[See main README file](https://github.com/nx-go/nx-go#readme)
+[See main README file](https://github.com/gondominium/nx-go#readme)

@@ -18,22 +18,22 @@ import type { ApplicationGeneratorSchema } from './schema';
 
 export const defaultTargets: { [targetName: string]: TargetConfiguration } = {
   build: {
-    executor: '@nx-go/nx-go:build',
+    executor: '@gondominium/nx-go:build',
     options: {
       main: '{projectRoot}/main.go',
     },
   },
   serve: {
-    executor: '@nx-go/nx-go:serve',
+    executor: '@gondominium/nx-go:serve',
     options: {
       main: '{projectRoot}/main.go',
     },
   },
   test: {
-    executor: '@nx-go/nx-go:test',
+    executor: '@gondominium/nx-go:test',
   },
   lint: {
-    executor: '@nx-go/nx-go:lint',
+    executor: '@gondominium/nx-go:lint',
   },
 };
 
@@ -45,7 +45,7 @@ export default async function applicationGenerator(
     tree,
     schema,
     'application',
-    '@nx-go/nx-go:application'
+    '@gondominium/nx-go:application'
   );
   const projectConfiguration: ProjectConfiguration = {
     root: options.projectRoot,
@@ -64,7 +64,7 @@ export default async function applicationGenerator(
     createGoMod(tree, options.projectRoot, options.projectRoot);
     addGoWorkDependency(tree, options.projectRoot);
     projectConfiguration.targets.tidy = {
-      executor: '@nx-go/nx-go:tidy',
+      executor: '@gondominium/nx-go:tidy',
     };
     updateProjectConfiguration(tree, options.name, projectConfiguration);
   }

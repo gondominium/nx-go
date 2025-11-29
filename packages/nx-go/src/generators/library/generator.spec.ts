@@ -104,7 +104,7 @@ describe('library generator', () => {
         targets: {
           ...defaultTargets,
           tidy: {
-            executor: '@nx-go/nx-go:tidy',
+            executor: '@gondominium/nx-go:tidy',
           },
         },
         tags: ['data', 'data-access'],

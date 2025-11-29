@@ -19,10 +19,10 @@ import { LibraryGeneratorSchema } from './schema';
 
 export const defaultTargets: { [targetName: string]: TargetConfiguration } = {
   test: {
-    executor: '@nx-go/nx-go:test',
+    executor: '@gondominium/nx-go:test',
   },
   lint: {
-    executor: '@nx-go/nx-go:lint',
+    executor: '@gondominium/nx-go:lint',
   },
 };
 
@@ -34,7 +34,7 @@ export default async function libraryGenerator(
     tree,
     schema,
     'library',
-    '@nx-go/nx-go:library'
+    '@gondominium/nx-go:library'
   );
   const projectConfiguration: ProjectConfiguration = {
     root: options.projectRoot,
@@ -56,7 +56,7 @@ export default async function libraryGenerator(
     createGoMod(tree, options.projectRoot, options.projectRoot);
     addGoWorkDependency(tree, options.projectRoot);
     projectConfiguration.targets.tidy = {
-      executor: '@nx-go/nx-go:tidy',
+      executor: '@gondominium/nx-go:tidy',
     };
     updateProjectConfiguration(tree, options.name, projectConfiguration);
   }

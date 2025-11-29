@@ -23,7 +23,7 @@ describe('nx-go', () => {
 
     // The plugin has been built and published to a local registry in the jest globalSetup
     // Install the plugin built with the latest source code into the test repo
-    execSync(`npm install -D @nx-go/nx-go@latest`, {
+    execSync(`npm install -D @gondominium/nx-go@latest`, {
       cwd: projectDirectory,
       stdio: 'inherit',
       env: process.env,
@@ -36,19 +36,19 @@ describe('nx-go', () => {
 
   it('should be installed', () => {
     // npm ls will fail if the package is not installed properly
-    execSync('npm ls @nx-go/nx-go', {
+    execSync('npm ls @gondominium/nx-go', {
       cwd: projectDirectory,
       stdio: 'inherit',
     });
   });
 
   it('should initialize the workspace', async () => {
-    await runNxCommandAsync(`generate @nx-go/nx-go:init`);
+    await runNxCommandAsync(`generate @gondominium/nx-go:init`);
     expect(() => checkFilesExist(`go.work`)).not.toThrow();
   });
 
   it('should create an application', async () => {
-    await runNxCommandAsync(`generate @nx-go/nx-go:application ${appName}`);
+    await runNxCommandAsync(`generate @gondominium/nx-go:application ${appName}`);
 
     expect(() => checkFilesExist(`${appName}/main.go`)).not.toThrow();
     expect(() => checkFilesExist(`${appName}/go.mod`)).not.toThrow();

@@ -23,7 +23,7 @@ describe('add-tidy-target-to-libraries-and-applications migration', () => {
       jest.spyOn(goBridge, 'isGoWorkspace').mockReturnValue(true);
     });
 
-    it('should update application / library targets with @nx-go/nx-go:tidy', async () => {
+    it('should update application / library targets with @gondominium/nx-go:tidy', async () => {
       const updateConfig = jest.spyOn(devkit, 'updateProjectConfiguration');
       jest.spyOn(devkit, 'getProjects').mockReturnValue(
         createProjectMapWithTarget({
@@ -35,11 +35,11 @@ describe('add-tidy-target-to-libraries-and-applications migration', () => {
       await update(tree);
       expect(updateConfig).toHaveBeenCalledWith(tree, 'api', expect.anything());
       expect(updateConfig.mock.calls[0][2].targets.tidy).toEqual({
-        executor: '@nx-go/nx-go:tidy',
+        executor: '@gondominium/nx-go:tidy',
       });
     });
 
-    it('should update application / library target with @nx-go/nx-go:tidy when target already exist with custom command', async () => {
+    it('should update application / library target with @gondominium/nx-go:tidy when target already exist with custom command', async () => {
       const updateConfig = jest.spyOn(devkit, 'updateProjectConfiguration');
       jest.spyOn(devkit, 'getProjects').mockReturnValue(
         createProjectMapWithTarget({

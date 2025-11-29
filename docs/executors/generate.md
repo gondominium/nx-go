@@ -1,4 +1,4 @@
-# @nx-go/nx-go:generate
+# @gondominium/nx-go:generate
 
 Runs `go generate` to execute an external tool which will generate code.
 

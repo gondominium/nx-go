@@ -1,18 +1,19 @@
-name: Release
+name: Publish to GitHub Packages
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-  release:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
     steps:
-      - name: 📥 Checkout Repo
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
-          token: ${{ secrets.GH_RELEASE_TOKEN }}
+      - uses: actions/checkout@v4
 
       - name: ⚙ Setup
         uses: ./.github/actions/setup
@@ -20,19 +21,8 @@ jobs:
           go_version: 1.23.2
           node_version: 22.x
 
-      - name: Configure Git
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-
-      - name: Check npm credentials
-        run: npm whoami
+      - run: |
+          cd ./packages/nx-go
+          pnpm publish --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: 🏷 Version
-        shell: bash
-        run: pnpm nx run-many --projects=nx-go --target=version
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,4 +1,4 @@
-# @nx-go/nx-go:serve
+# @gondominium/nx-go:serve
 
 Uses `go run` command to run a Go application.
 

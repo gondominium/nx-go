@@ -1,4 +1,4 @@
-# @nx-go/nx-go:library
+# @gondominium/nx-go:library
 
 Creates a Go library.
 
@@ -7,7 +7,7 @@ Creates a Go library.
 Create an library named **data-access**:
 
 ```shell
-nx g @nx-go/nx-go:library data-access
+nx g @gondominium/nx-go:library data-access
 ```
 
 ## Options

@@ -1,4 +1,4 @@
-# @nx-go/nx-go:tidy
+# @gondominium/nx-go:tidy
 
 Runs `go mod tidy` to ensures that the go.mod file matches the source code in a Go module.
 

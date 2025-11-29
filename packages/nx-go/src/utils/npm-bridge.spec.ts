@@ -9,7 +9,7 @@ describe('Npm bridge', () => {
     it('should return project scope', () => {
       jest
         .spyOn(nxDevkit, 'readJson')
-        .mockReturnValueOnce({ name: '@nx-go/nx-go' });
+        .mockReturnValueOnce({ name: '@gondominium/nx-go' });
       expect(getProjectScope(createTreeWithEmptyWorkspace())).toBe('nx-go');
     });
   });

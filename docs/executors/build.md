@@ -1,4 +1,4 @@
-# @nx-go/nx-go:build
+# @gondominium/nx-go:build
 
 Builds a project with `go build` cli command.
 

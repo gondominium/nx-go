@@ -84,7 +84,7 @@ describe('application generator', () => {
         targets: {
           ...defaultTargets,
           tidy: {
-            executor: '@nx-go/nx-go:tidy',
+            executor: '@gondominium/nx-go:tidy',
           },
         },
         tags: ['api', 'backend'],

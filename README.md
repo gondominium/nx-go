@@ -6,10 +6,10 @@
 
 **First-class support of [Go](https://go.dev) in a [Nx](https://nx.dev) workspace**
 
-[![GitHub release](https://img.shields.io/github/v/release/nx-go/nx-go)](https://github.com/nx-go/nx-go/releases/latest)
+[![GitHub release](https://img.shields.io/github/v/release/gondominium/nx-go)](https://github.com/gondominium/nx-go/releases/latest)
 [![Nx version](https://img.shields.io/npm/dependency-version/%40nx-go%2Fnx-go/%40nx%2Fdevkit?label=Nx&logo=nx)](https://nx.dev)
-[![npm Downloads](https://img.shields.io/npm/dt/@nx-go/nx-go?color=eb2f06&logo=npm)](https://npmjs.com/package/@nx-go/nx-go)
-[![LICENSE](https://img.shields.io/github/license/nx-go/nx-go)](https://github.com/nx-go/nx-go/blob/main/LICENSE)
+[![npm Downloads](https://img.shields.io/npm/dt/@gondominium/nx-go?color=eb2f06&logo=npm)](https://npmjs.com/package/@gondominium/nx-go)
+[![LICENSE](https://img.shields.io/github/license/gondominium/nx-go)](https://github.com/gondominium/nx-go/blob/main/LICENSE)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nx-go_nx-go&metric=alert_status)](https://sonarcloud.io/dashboard?id=nx-go_nx-go)
 
 </div>
@@ -28,19 +28,19 @@ You need to have a [stable version of Go](https://go.dev/dl/) installed on your 
 ### Generate a Nx workspace with Go support
 
 ```shell
-npx create-nx-workspace go-workspace --preset=@nx-go/nx-go
+npx create-nx-workspace go-workspace --preset=@gondominium/nx-go
 ```
 
 ### Add to an exisiting workspace
 
 ```shell
-nx add @nx-go/nx-go
+nx add @gondominium/nx-go
 ```
 
 ### Migrate to latest version
 
 ```shell
-nx migrate @nx-go/nx-go
+nx migrate @gondominium/nx-go
 ```
 
 ### Don't want to use a multi-module Go workspace?
@@ -48,7 +48,7 @@ nx migrate @nx-go/nx-go
 The plugin configures a [multi-module Go workspace](https://go.dev/doc/tutorial/workspaces) by default, to simplify project management and improve the quality of the Nx graph. If you don't want to take advantage of this feature, you can use generator `convert-to-one-mod` after the plugin installation. Generators will automatically adapt to your configuration.
 
 ```shell
-nx g @nx-go/nx-go:convert-to-one-mod
+nx g @gondominium/nx-go:convert-to-one-mod
 ```
 
 ## 📖 Generators & executors
@@ -68,9 +68,9 @@ nx g @nx-go/nx-go:convert-to-one-mod
 - `tidy`: [Ensures go.mod file matches a project source code](./docs/executors/tidy.md)
 
 > [!TIP]
-> You can use `nx list @nx-go/nx-go` to see list capabilities.
+> You can use `nx list @gondominium/nx-go` to see list capabilities.
 
-Want to try out these capabilities quickly? Visit our [playground](https://github.com/nx-go/nx-go-playground)!
+Want to try out these capabilities quickly? Visit our [playground](https://github.com/gondominium/nx-go-playground)!
 
 Need more customization? A [plugin configuration](./docs/options.md) is also available.
 

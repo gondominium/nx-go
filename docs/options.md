@@ -1,4 +1,4 @@
-# @nx-go/nx-go options
+# @gondominium/nx-go options
 
 The plugin allows to configure its behavior with global options.
 
@@ -13,7 +13,7 @@ Here is an example:
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "plugins": [
     {
-      "plugin": "@nx-go/nx-go",
+      "plugin": "@gondominium/nx-go",
       "options": { "skipGoDependencyCheck": true }
     }
   ]
